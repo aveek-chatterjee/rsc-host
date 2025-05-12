@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { RemoteComponentProps } from "@/types";
 
 interface RemoteComponentWrapperProps extends RemoteComponentProps {
@@ -21,16 +21,12 @@ export default function RemoteComponent({
     try {
       const response = await fetch("/api/status", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
         body: JSON.stringify(props),
       });
 
       if (!response.ok) {
         throw new Error(`Failed to fetch remote component: ${response.status}`);
       }
-
       const result = await response.text();
       setHtml(result);
       setAPIInvoked(true);

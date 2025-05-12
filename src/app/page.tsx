@@ -1,9 +1,14 @@
+"use client";
+
+import React from "react";
 import RemoteComponent from "@/components/RemoteComponent";
+import HostClient from "@/components/HostClientComponent";
 
 export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="w-full max-w-2xl p-6 bg-white rounded-lg shadow-md">
+        <HostClient />
         <RemoteComponent
           title="Remote Widget from Host"
           description="This widget can be updated client-side too"

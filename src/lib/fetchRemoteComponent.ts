@@ -12,10 +12,6 @@ export async function fetchRemoteComponent(
       `${REMOTE_COMPONENT_URL}/api/remote-component`,
       {
         method: "POST",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
         body: JSON.stringify(props),
       }
     );

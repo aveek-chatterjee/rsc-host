@@ -27,9 +27,6 @@ export default function RemoteComponent({
           `${REMOTE_COMPONENT_URL}/api/remote-component`,
           {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
             body: JSON.stringify(props),
           }
         );
